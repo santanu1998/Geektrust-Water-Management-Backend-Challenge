@@ -1,10 +1,8 @@
 package com.geektrust.backend.commands;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import com.geektrust.backend.exceptions.NoSuchCommandException;
 
 public class WaterManagementCommandRegistry {

@@ -6,11 +6,12 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import com.geektrust.backend.appConfig.ApplicationConfiguration;
 import com.geektrust.backend.commands.WaterManagementCommandRegistry;
 import com.geektrust.backend.constants.ConstantsHere;
 import com.geektrust.backend.exceptions.NoSuchCommandException;
 
-public class App {
+public class Main {
     public static void main(String[] args) {
         if (args.length != 1) {
             throw new RuntimeException();
@@ -67,8 +68,26 @@ public class App {
         //     e.printStackTrace();
         // }
 
-        Configuration configuration = Configuration.getInstance();
-		WaterManagementCommandRegistry waterManagementCommandRegistry = configuration.getWaterManagementCommandRegistry();
+        // Configuration configuration = Configuration.getInstance();
+		// WaterManagementCommandRegistry waterManagementCommandRegistry = configuration.getWaterManagementCommandRegistry();
+		// BufferedReader reader;
+		// String inputFile = commandLineArgs.get(ConstantsHere.ZERO_HERE);
+		// try {
+		// 	reader = new BufferedReader(new FileReader(inputFile));
+		// 	String line = reader.readLine();
+		// 	while (line != null) {
+		// 		List<String> tokens = Arrays.asList(line.split(" "));
+		// 		waterManagementCommandRegistry.invokeCommand(tokens.get(ConstantsHere.ZERO_HERE),tokens);
+		// 		// read next line
+		// 		line = reader.readLine();
+		// 	}
+		// 	reader.close();
+		// } catch (IOException | NoSuchCommandException e) {
+		// 	e.printStackTrace();
+		// }
+
+        ApplicationConfiguration applicationConfiguration = new ApplicationConfiguration();
+		WaterManagementCommandRegistry waterManagementCommandRegistry = applicationConfiguration.getWaterManagementCommandRegistry();
 		BufferedReader reader;
 		String inputFile = commandLineArgs.get(ConstantsHere.ZERO_HERE);
 		try {
@@ -76,12 +95,13 @@ public class App {
 			String line = reader.readLine();
 			while (line != null) {
 				List<String> tokens = Arrays.asList(line.split(" "));
-				waterManagementCommandRegistry.invokeCommand(tokens.get(ConstantsHere.ZERO_HERE),tokens);
+				waterManagementCommandRegistry.invokeCommand(tokens.get(ConstantsHere.ZERO_HERE), tokens);
 				// read next line
 				line = reader.readLine();
 			}
 			reader.close();
-		} catch (IOException | NoSuchCommandException e) {
+		} 
+        catch (IOException | NoSuchCommandException e) {
 			e.printStackTrace();
 		}
     }

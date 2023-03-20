@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@DisplayName("AppTest")
-class AppTest {
+@DisplayName("MainTest")
+class MainTest {
     private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
@@ -26,7 +26,7 @@ class AppTest {
 
         String expectedOutput = "2400 5215";
         //Act
-        App.run(arguments);
+        Main.run(arguments);
         //Assert
         Assertions.assertEquals(expectedOutput,outputStreamCaptor.toString().trim());
     }
@@ -39,7 +39,7 @@ class AppTest {
 
         String expectedOutput = "3000 5750";
         //Act
-        App.run(arguments);
+        Main.run(arguments);
         //Assert
         Assertions.assertEquals(expectedOutput,outputStreamCaptor.toString().trim());
     }
@@ -52,7 +52,7 @@ class AppTest {
 
         String expectedOutput = "900 1200";
         //Act
-        App.run(arguments);
+        Main.run(arguments);
         //Assert
         Assertions.assertEquals(expectedOutput,outputStreamCaptor.toString().trim());
     }
