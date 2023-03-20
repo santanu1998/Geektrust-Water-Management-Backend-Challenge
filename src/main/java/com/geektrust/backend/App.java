@@ -11,7 +11,7 @@ import com.geektrust.backend.commands.WaterManagementCommandRegistry;
 import com.geektrust.backend.constants.ConstantsHere;
 import com.geektrust.backend.exceptions.NoSuchCommandException;
 
-public class Main {
+public class App {
     public static void main(String[] args) {
         if (args.length != 1) {
             throw new RuntimeException();
