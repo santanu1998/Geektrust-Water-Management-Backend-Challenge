@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import com.geektrust.backend.commands.WaterManagementCommandRegistry;
-import com.geektrust.backend.constants.Constants;
+import com.geektrust.backend.constants.ConstantsHere;
 import com.geektrust.backend.exceptions.NoSuchCommandException;
 
 public class App {
@@ -70,13 +70,13 @@ public class App {
         Configuration configuration = Configuration.getInstance();
 		WaterManagementCommandRegistry waterManagementCommandRegistry = configuration.getWaterManagementCommandRegistry();
 		BufferedReader reader;
-		String inputFile = commandLineArgs.get(Constants.ZERO);
+		String inputFile = commandLineArgs.get(ConstantsHere.ZERO_HERE);
 		try {
 			reader = new BufferedReader(new FileReader(inputFile));
 			String line = reader.readLine();
 			while (line != null) {
 				List<String> tokens = Arrays.asList(line.split(" "));
-				waterManagementCommandRegistry.invokeCommand(tokens.get(Constants.ZERO),tokens);
+				waterManagementCommandRegistry.invokeCommand(tokens.get(ConstantsHere.ZERO_HERE),tokens);
 				// read next line
 				line = reader.readLine();
 			}

@@ -1,7 +1,7 @@
 package com.geektrust.backend.commands;
 
 import java.util.List;
-import com.geektrust.backend.constants.Constants;
+import com.geektrust.backend.constants.ConstantsHere;
 import com.geektrust.backend.exceptions.NoSuchCommandException;
 import com.geektrust.backend.services.IApartmentBillServices;
 
@@ -16,7 +16,7 @@ public class AlotWaterCommand implements ICommand {
     @Override
     public void invoke(List<String> tokens) {
         try {
-            apartmentBillServices.allotWaterForApartmentHere(Integer.valueOf(tokens.get(Constants.ONE)),tokens.get(Constants.TWO));
+            apartmentBillServices.allotWaterForApartmentHere(Integer.valueOf(tokens.get(ConstantsHere.ONE_HERE)),tokens.get(ConstantsHere.TWO_HERE));
         } 
         catch (NoSuchCommandException e) {
             System.out.println("Invalid Command");

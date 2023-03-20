@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 import static org.mockito.ArgumentMatchers.anyList;
 
-@DisplayName("CommandRegistryTest")
+@DisplayName("WaterManagementCommandRegistryTest")
 @ExtendWith(MockitoExtension.class)
-public class CommandRegistryTest {
+public class WaterManagementCommandRegistryTest {
 
     private WaterManagementCommandRegistry waterManagementCommandRegistry;
 

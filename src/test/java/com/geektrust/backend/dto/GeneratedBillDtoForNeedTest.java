@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("GeneratedBillDtoTest")
-public class GeneratedBillDtoTest {
+@DisplayName("GeneratedBillDtoForNeedTest")
+public class GeneratedBillDtoForNeedTest {
     @Test
     @DisplayName("should create a GeneratedBillDto Object")
     public void shouldCreateAGeneratedBillDtoObject() {
